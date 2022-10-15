@@ -14,22 +14,24 @@ describe('AppComponent', () => {
     }).compileComponents();
   }));
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
+ 
   it(`should have as title 'testingExample'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('testingExample');
+	
+	// expect(app.display()).not.toBeGreaterThan(10);
+	//expect(app.b).not.toBeTruthy();
+	//expect(app.title).not.toBeDefined();
+   expect(app.title).not.toEqual('hello welcome');
   });
 
-  it('should render title in a h1 tag', () => {
+	it(`should have as a 'testingExample'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to testingExample!');
+    const app = fixture.debugElement.componentInstance;
+	
+    expect(app.a).toEqual(10);
   });
+  
+  
+ 
 });
